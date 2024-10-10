@@ -11,7 +11,7 @@ export default async function page() {
 
   return (
     <div>
-      <p className='fira-code-regular m-5'>
+      <p className='m-5'>
         Welcome back, {session.user.name || 'User'}!
       </p>
     </div>

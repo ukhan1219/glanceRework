@@ -10,6 +10,7 @@ export default {
         manrope: ['Manrope', ...fontFamily.sans], // Adding Manrope
         firaCode: ['Fira Code', ...fontFamily.mono], // Adding Fira Code
       },
+      
     },
   },
   plugins: [

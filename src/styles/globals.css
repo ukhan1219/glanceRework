@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+  background-color: #292464; /* Global background color */
+  margin: 0; /* Remove default margin */
+  font-family: 'Fira Code', serif;
+  font-weight: 450;
+}
+
+/* just in case  */
+/* Ensure body uses flexbox to stretch content to full height */
+/* body {
+  display: flex;
+  flex-direction: column;
+} */
+
+/* Ensure root layout container stretches to fill full height */
+/* #__next {
+  flex-grow: 1;
+} */
+
+
 .manrope-regular {
   font-family: "Manrope", sans-serif;
   font-optical-sizing: auto;
@@ -26,7 +47,7 @@
 .fira-code-regular {
     font-family: "Fira Code", serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 450;
     font-style: normal;
   }
 
