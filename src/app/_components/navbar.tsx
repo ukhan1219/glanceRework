@@ -18,7 +18,7 @@ export const Navbar = async () => {
 
                 {/* TODO different colors can be used here, use tailwind color functionality first (text-[color]-[some amount]) */}
 
-                <div className='navbar-end'>
+                <div className='navbar-center'>
                     <div className='px-5 fira-code-bold text-neutral-500 hover:text-neutral-700 transition-colors duration-300'>
                         <Link href='/dashboard'>
                             Dashboard
@@ -34,6 +34,10 @@ export const Navbar = async () => {
                             FraudCheck
                         </Link>
                     </div>
+
+                </div>
+
+                <div className="navbar-end">
                     <div className='px-5 fira-code-bold  text-neutral-500 hover:text-neutral-700 transition-colors duration-300'>
                         {session ? (
                             <LogoutButton />
@@ -46,7 +50,7 @@ export const Navbar = async () => {
                 </div>
             </header>
             <hr className="border-t border-gray-300 mx-5 my-2.5" />
-            
+
         </>
     );
 };

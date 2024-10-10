@@ -5,11 +5,15 @@ import { redirect } from 'next/navigation'
 export default async function page() {
   const session = await getServerAuthSession();
 
-  if (!session){
+  if (!session) {
     return redirect('/login');
   }
 
   return (
-    <div>dashboard</div>
+    <div>
+      <p className='fira-code-regular m-5'>
+        Welcome back, {session.user.name || 'User'}!
+      </p>
+    </div>
   )
 }
