@@ -7,8 +7,13 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        manrope: ['Manrope', ...fontFamily.sans], // Adding Manrope
+        firaCode: ['Fira Code', ...fontFamily.mono], // Adding Fira Code
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+  ],
 } satisfies Config;
