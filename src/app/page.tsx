@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getServerAuthSession } from "~/server/auth";
 import { api, HydrateClient } from "~/trpc/server";
 
+//  TODO: index/splash page
+
 export default async function Home() {
 
   return (

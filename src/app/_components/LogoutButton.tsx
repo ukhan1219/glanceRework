@@ -2,7 +2,7 @@
 
 import { signOut } from "next-auth/react"
 
-
+//  logout button handler
 export const LogoutButton  = () => {
     const handleSignout = () => {
         signOut({
