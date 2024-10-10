@@ -3,13 +3,14 @@ import Link from "next/link";
 import { LogoutButton } from "./LogoutButton";
 
 
+
 // navbar component
 export const Navbar = async () => {
     const session = await getServerAuthSession();
 
     return (
         <>
-            <header className='navbar'>
+            <header className='navbar z-50 relative'>
                 <div className='navbar-start manrope-bold text-5xl  text-[#e5cfa2] hover:text-[#cda24c] transition-colors duration-300 mx-4'>
                     <Link href='/'>
                         Glance

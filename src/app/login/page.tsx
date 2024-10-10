@@ -9,6 +9,7 @@ export default async function page() {
 
   if (session) {
     return redirect('/dashboard');
+
   }
 
   return (
@@ -25,5 +26,6 @@ export default async function page() {
         </div>
       </div>
     </HydrateClient>
+
   );
 }
