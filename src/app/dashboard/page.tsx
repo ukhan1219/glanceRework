@@ -17,33 +17,35 @@ export default async function page() {
 
         {/* Grid Box 1 */}
         <div className='col-span-2 row-span-1 relative rounded-xl bg-foreground'>
-          {/* BUTTON HERE  */}
-          <AccountOverview/>
-          {/* Title anchored to the bottom-left */}
-          <div className="absolute bottom-1 left-2">
-            <p className="text-lg fira-code-bold">sameer LIKES BALLS</p>
+          {/* Scrollable Content */}
+          {/* TODO ADD SOME SORT OF WAY TO KEEP BALANCE STUCK AT TOP, AND THEN HIDE STUFF BEHIND THE LABEL, AND SHOW ARROW TO SCROLL  */}
+          <div className='h-full hide-scrollbar overflow-auto rounded-xl'>
+            <AccountOverview />
           </div>
-          {/* Other content can go here */}
+          {/* Label anchored to the bottom-left */}
+          <div className="absolute bottom-1 left-2">
+            <p className="text-lg font-bold">GRID LABEL HERE</p>
+          </div>
         </div>
 
         {/* Grid Box 2 */}
         <div className='col-span-1 row-span-1 relative rounded-xl bg-foreground'>
           <div className="absolute bottom-1 left-2">
-            <p className="text-lg fira-code-bold">sameer LIKES BALLS</p>
+            <p className="text-lg fira-code-bold">GRID LABEL HERE</p>
           </div>
         </div>
 
         {/* Grid Box 3 */}
         <div className='col-span-1 row-span-1 relative rounded-xl bg-foreground'>
           <div className="absolute bottom-1 left-2">
-            <p className="text-lg fira-code-bold">sameer LIKES BALLS</p>
+            <p className="text-lg fira-code-bold">GRID LABEL HERE</p>
           </div>
         </div>
 
         {/* Grid Box 4 */}
         <div className='col-span-2 row-span-1 relative rounded-xl bg-foreground'>
           <div className="absolute bottom-1 left-2">
-            <p className="text-lg fira-code-bold">sameer LIKES BALLS</p>
+            <p className="text-lg fira-code-bold">GRID LABEL HERE</p>
           </div>
         </div>
       </div>
