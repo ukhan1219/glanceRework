@@ -1,34 +1,33 @@
 import "~/styles/globals.css";
-
-import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
-
 import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "./_components/navbar";
+
+// Corrected import
+import { Manrope, Fira_Code } from "@next/font/google"; // Hypothetical font import
 
 export const metadata: Metadata = {
   title: "Glance",
   description: "Your Personal Finance, at a Glance",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-//  does not need to be changed
+// This function does not need to be changed
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&display=swap"
           rel="stylesheet"
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-            <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet"></link>
-          </link>
-        </link>
       </head>
       <body>
         <Navbar />
