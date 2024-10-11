@@ -3,9 +3,6 @@ import { type Metadata } from "next";
 import { TRPCReactProvider } from "~/trpc/react";
 import { Navbar } from "./_components/navbar";
 
-// Corrected import
-import { Manrope, Fira_Code } from "@next/font/google"; // Hypothetical font import
-
 export const metadata: Metadata = {
   title: "Glance",
   description: "Your Personal Finance, at a Glance",
