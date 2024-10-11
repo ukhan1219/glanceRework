@@ -11,6 +11,6 @@ export const LogoutButton  = () => {
     };
 
     return (
-        <button onClick={handleSignout} className="text-red-500 hover:text-red-700 transition-colors duration-300">Logout</button>
+        <button onClick={handleSignout} className="text-red-500 hover:text-red-800 transition-colors duration-300">Logout</button>
     )
 }

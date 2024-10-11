@@ -15,7 +15,7 @@ export default async function page() {
   return (
     <HydrateClient>
       <div className="fixed inset-0 flex justify-center items-center">
-        <div className="card bg-neutral text-neutral-content w-96">
+        <div className="card bg-foreground text-neutral-content w-96">
           <div className="card-body items-center text-center">
             <h2 className="card-title text-5xl manrope-bold">Sign In</h2>
             <div className="card-actions justify-end">

@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 html, body {
   height: 100%;
-  background-color: #292464; /* Global background color */
-  margin: 0; /* Remove default margin */
+  background-color: #292464; 
+  margin: 0; 
+
   font-family: 'Fira Code', serif;
   font-weight: 450;
 }
+
 
 /* just in case  */
 /* Ensure body uses flexbox to stretch content to full height */
@@ -21,7 +25,6 @@ html, body {
 /* #__next {
   flex-grow: 1;
 } */
-
 
 .manrope-regular {
   font-family: "Manrope", sans-serif;
@@ -75,3 +78,19 @@ html, body {
   .bg-foreground {
     background-color: #2e3058
   }
+
+  /* Hide scrollbar on Chrome, Safari, and other WebKit browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar on Firefox */
+html {
+  scrollbar-width: none; /* For Firefox */
+}
+
+/* Optional: This prevents touch devices from having scroll overflow indicators */
+body {
+  -ms-overflow-style: none; /* For IE and Edge */
+  overflow: -moz-scrollbars-none; /* For older Firefox versions */
+}
