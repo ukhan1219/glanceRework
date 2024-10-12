@@ -1,4 +1,3 @@
-// AccountOverview.tsx
 "use client";
 
 import React, { useState, useContext } from "react";
@@ -64,7 +63,7 @@ export default function AccountOverview() {
         }}
         onSuccess={handlePlaidSuccess}
         setBalance={setBalance}
-        setTransactions={setTransactions} // Use context's setTransactions
+        setTransactions={setTransactions}
       />
     </div>
   );

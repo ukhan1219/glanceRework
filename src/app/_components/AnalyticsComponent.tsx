@@ -1,4 +1,3 @@
-// src/app/_components/AnalyticsComponent.tsx
 "use client";
 
 import React, { useEffect, useState, useContext } from 'react';
@@ -28,7 +27,6 @@ const AnalyticsComponent: React.FC = () => {
         },
       }
     );
-    // Remove getAnalytics from dependencies to prevent infinite loop
   }, [transactions]);
 
   return (

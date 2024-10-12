@@ -1,4 +1,3 @@
-// PlaidLink.tsx
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -81,6 +80,7 @@ interface PlaidLinkProps {
 }
 
 const PlaidLink = React.memo(({ onOpen, onSuccess, setBalance, setTransactions }: PlaidLinkProps) => {
+  // TODO CLIENT USER ID SO I CAN PERSIST
   const [clientUserId] = useState("your-client-user-id"); 
   const [linkToken, setLinkToken] = useState<string | undefined>(undefined);
   const [publicToken, setPublicToken] = useState<string | undefined>(undefined);
