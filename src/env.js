@@ -29,6 +29,7 @@ export const env = createEnv({
     PLAID_CLIENT_ID: z.string(),
     PLAID_SECRET: z.string(),
     PLAID_ENV: z.string(),
+    OPENAI_API_KEY:  z.string(),
   },
 
   /**
@@ -56,6 +57,7 @@ export const env = createEnv({
     PLAID_CLIENT_ID: process.env.PLAID_CLIENT_ID,
     PLAID_SECRET: process.env.PLAID_SECRET,
     PLAID_ENV: process.env.PLAID_ENV,
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

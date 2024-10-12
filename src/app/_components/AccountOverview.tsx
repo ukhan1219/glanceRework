@@ -1,11 +1,17 @@
 // AccountOverview.tsx
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PlaidLink from "../_components/PlaidLink";
 import { Transaction } from "../_components/types";
 
-export default function AccountOverview() {
+
+interface AccountOverviewProps {
+  setTransactions: (transactions: Transaction[]) => void;
+}
+
+
+export default function AccountOverview({ setTransactions: setParentTransactions }: AccountOverviewProps) {
   const [openPlaidLink, setOpenPlaidLink] = useState<(() => void) | null>(null);
   const [isPlaidReady, setIsPlaidReady] = useState(false);
   const [balance, setBalance] = useState<string | null>(null);
@@ -23,6 +29,9 @@ export default function AccountOverview() {
   const handlePlaidSuccess = (token: string) => {
     setPublicToken(token);
   };
+  useEffect(() => {
+    setParentTransactions(transactions);
+  }, [transactions, setParentTransactions]);
 
   return (
     <div className="col-span-2 row-span-1 relative rounded-xl bg-foreground p-5">

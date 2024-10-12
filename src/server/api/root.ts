@@ -1,5 +1,6 @@
 import { createCallerFactory, createTRPCRouter } from "~/server/api/trpc";
 import { plaidRouter } from "./routers/plaid";
+import { openaiRouter } from "./routers/openai";
 /**
  * This is the primary router for your server.
  *
@@ -7,6 +8,7 @@ import { plaidRouter } from "./routers/plaid";
  */
 export const appRouter = createTRPCRouter({
   plaid: plaidRouter,
+  openai: openaiRouter,
 });
 
 // export type definition of API

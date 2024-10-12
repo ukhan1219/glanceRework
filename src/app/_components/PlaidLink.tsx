@@ -36,7 +36,7 @@ function PlaidAuthentication({ publicToken, setBalance, setTransactions }: Plaid
 
       getTransactions({ accessToken, startDate: startDateString, endDate });
     }
-  }, [dataPub, getAccountBalance, getTransactions]);
+  }, [dataPub]);
 
   useEffect(() => {
     if (dataTransactions) {
