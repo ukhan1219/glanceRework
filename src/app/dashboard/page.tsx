@@ -84,17 +84,25 @@ export default async function DashboardPage() {
 
   return (
     <div className='h-[calc(100vh-85px)] w-full flex items-center justify-center'>
-      {/* Wrap your components with the TransactionsProvider */}
       <TransactionsProvider>
         <div className='grid h-full w-full grid-cols-3 grid-rows-2 gap-2.5 p-5 xl:m-32 lg:m-16 md:m-8 sm:m-4'>
-
           {/* Grid Box 1 */}
-          <div className='col-span-2 row-span-1 relative rounded-xl bg-foreground'>
-            <div className='h-full hide-scrollbar overflow-auto rounded-xl'>
+          <div className='col-span-2 row-span-1 relative rounded-xl bg-foreground overflow-hidden'>
+            {/* Scrollable Content */}
+            <div className='h-full hide-scrollbar overflow-auto rounded-xl p-4 pb-12 relative'>
               <AccountOverview />
             </div>
-            <div className="absolute bottom-1 left-2">
+            {/* Label anchored to the bottom-left */}
+            <div className="absolute bottom-0 left-0 w-full bg-opacity-90 bg-foreground py-2 px-4 flex items-center justify-between z-10">
               <p className="text-lg font-bold">Account Overview</p>
+              {/* Scroll Indicator */}
+              <div className="flex items-center">
+                <span className="text-sm">More</span>
+                <svg className="w-4 h-4 ml-1 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {/* Down arrow icon */}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
+                </svg>
+              </div>
             </div>
           </div>
 
@@ -106,16 +114,22 @@ export default async function DashboardPage() {
           </div>
 
           {/* Grid Box 3 */}
-          <div className='col-span-3 row-span-1 relative rounded-xl bg-foreground'>
-            <div className='h-full hide-scrollbar overflow-auto rounded-xl text-2xl'>
+          <div className='col-span-3 row-span-1 relative rounded-xl bg-foreground overflow-hidden'>
+            <div className='h-full hide-scrollbar overflow-auto rounded-xl p-4 pb-12 text-2xl relative'>
               <AnalyticsComponent />
             </div>
-            <div className="absolute bottom-1 left-2">
+            <div className="absolute bottom-0 left-0 w-full bg-opacity-90 bg-foreground py-2 px-4 flex items-center justify-between z-10">
               <p className="text-lg font-bold">Analytics</p>
+              {/* Scroll Indicator */}
+              <div className="flex items-center">
+                <span className="text-sm">More</span>
+                <svg className="w-4 h-4 ml-1 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {/* Down arrow icon */}
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 5v14m7-7H5" />
+                </svg>
+              </div>
             </div>
           </div>
-
-          {/* Other grid boxes */}
         </div>
       </TransactionsProvider>
     </div>

@@ -13,7 +13,7 @@ export const openaiRouter = createTRPCRouter({
     getAnalytics: protectedProcedure.input(z.object({transactions: z.string(),})).mutation(async ({ input }) => {
 
         try {
-            const prompt = `LIMIT TO 500 TOKENS; DO NOT USE MARKDOWN FORMAT (meaning do not use asterisks or hashtags since it will ruin the formatting of my website): Here are my recent transactions, I want you to  generate a summary of my spending habits: ${input.transactions}, and also mark the categories I spent the most money in and suggestions on how to budget myself better and save money. Keep it personalized, not generalized advice.`;
+            const prompt = `LIMIT TO 250 TOKENS; DO NOT USE MARKDOWN FORMAT (meaning do not use asterisks or hashtags since it will ruin the formatting of my website): Here are my recent transactions, I want you to  generate a summary of my spending habits: ${input.transactions}, and also mark the categories I spent the most money in and suggestions on how to budget myself better and save money. Keep it personalized, not generalized advice.`;
 
             const response = await openai.chat.completions.create({
                 model: model,
@@ -21,7 +21,7 @@ export const openaiRouter = createTRPCRouter({
                     {role: "system", content: "You are a helpful financial analyst/assistant."},
                     {role: "user", content: prompt}
                 ],
-                max_tokens: 500,
+                max_tokens: 250,
                 temperature: 1,
             });
 
