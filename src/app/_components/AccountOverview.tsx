@@ -1,21 +1,15 @@
 // AccountOverview.tsx
 "use client";
 
-import React, { useState, useEffect } from "react";
-import PlaidLink from "../_components/PlaidLink";
-import { Transaction } from "../_components/types";
+import React, { useState, useContext } from "react";
+import PlaidLink from "./PlaidLink";
+import { TransactionsContext } from "./TransactionsContext";
 
-
-interface AccountOverviewProps {
-  setTransactions: (transactions: Transaction[]) => void;
-}
-
-
-export default function AccountOverview({ setTransactions: setParentTransactions }: AccountOverviewProps) {
+export default function AccountOverview() {
   const [openPlaidLink, setOpenPlaidLink] = useState<(() => void) | null>(null);
   const [isPlaidReady, setIsPlaidReady] = useState(false);
   const [balance, setBalance] = useState<string | null>(null);
-  const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const { transactions, setTransactions } = useContext(TransactionsContext)!;
   const [publicToken, setPublicToken] = useState<string | null>(null);
 
   const handleConnectBank = () => {
@@ -29,9 +23,6 @@ export default function AccountOverview({ setTransactions: setParentTransactions
   const handlePlaidSuccess = (token: string) => {
     setPublicToken(token);
   };
-  useEffect(() => {
-    setParentTransactions(transactions);
-  }, [transactions, setParentTransactions]);
 
   return (
     <div className="col-span-2 row-span-1 relative rounded-xl bg-foreground p-5">
@@ -73,7 +64,7 @@ export default function AccountOverview({ setTransactions: setParentTransactions
         }}
         onSuccess={handlePlaidSuccess}
         setBalance={setBalance}
-        setTransactions={setTransactions}
+        setTransactions={setTransactions} // Use context's setTransactions
       />
     </div>
   );

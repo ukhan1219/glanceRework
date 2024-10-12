@@ -1,15 +1,12 @@
 // src/app/_components/AnalyticsComponent.tsx
 "use client";
 
-import React, { useEffect, useState } from 'react';
-import { api } from '~/trpc/react'; // tRPC client hooks
-import { Transaction } from './types';
+import React, { useEffect, useState, useContext } from 'react';
+import { api } from '~/trpc/react';
+import { TransactionsContext } from './TransactionsContext';
 
-interface AnalyticsComponentProps {
-  transactions: Transaction[];
-}
-
-const AnalyticsComponent: React.FC<AnalyticsComponentProps> = ({ transactions }) => {
+const AnalyticsComponent: React.FC = () => {
+  const { transactions } = useContext(TransactionsContext)!;
   const [analytics, setAnalytics] = useState<string>('');
 
   const getAnalytics = api.openai.getAnalytics.useMutation();
@@ -31,8 +28,8 @@ const AnalyticsComponent: React.FC<AnalyticsComponentProps> = ({ transactions })
         },
       }
     );
-  // Remove getAnalytics from dependencies
-  }, [transactions]); 
+    // Remove getAnalytics from dependencies to prevent infinite loop
+  }, [transactions]);
 
   return (
     <div className='p-4'>
@@ -50,3 +47,4 @@ const AnalyticsComponent: React.FC<AnalyticsComponentProps> = ({ transactions })
 };
 
 export default AnalyticsComponent;
+

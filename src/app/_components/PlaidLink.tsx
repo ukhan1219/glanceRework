@@ -50,7 +50,7 @@ function PlaidAuthentication({ publicToken, setBalance, setTransactions }: Plaid
         merchantName: txn.merchant_name || txn.name || "Unknown",
       }));
 
-      setTransactions(formattedTransactions); // Pass formatted transactions
+      setTransactions(formattedTransactions); // Update context's transactions
     }
   }, [dataTransactions, setTransactions]);
 
