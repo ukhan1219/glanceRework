@@ -69,7 +69,7 @@
 import React from 'react';
 import { getServerAuthSession } from '~/server/auth';
 import { redirect } from 'next/navigation';
-import DashboardContent from '../_components/DashboardContent';
+import DashboardContent from './DashboardContent';
 
 export default async function page() {
   const session = await getServerAuthSession();
